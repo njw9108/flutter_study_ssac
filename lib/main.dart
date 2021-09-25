@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_calc/widget/calc_bmi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -112,7 +113,7 @@ class _BmiMainState extends State<BmiMain> {
 class BmiResult extends StatelessWidget {
   final double height;
   final double weight;
-
+  Calc_BMI calc;
   BmiResult(this.height, this.weight);
 
   @override
@@ -129,7 +130,7 @@ class BmiResult extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              _calcBmi(bmi),
+              calc.calcBmi(bmi),
               style: TextStyle(fontSize: 36),
             ),
             SizedBox(
@@ -140,22 +141,6 @@ class BmiResult extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String _calcBmi(double bmi) {
-    var result = '저체중';
-    if (bmi >= 35) {
-      result = '고도 비만';
-    } else if (bmi >= 30) {
-      result = '2단계 비만';
-    } else if (bmi >= 25) {
-      result = '1단계 비만';
-    } else if (bmi >= 23) {
-      result = '과체중';
-    } else if (bmi >= 18.5) {
-      result = '정상';
-    }
-    return result;
   }
 
   Widget _buildIcon(double bmi) {
