@@ -1,6 +1,7 @@
 # bmi_calc
 
 A new Flutter project.
+![결과](https://user-images.githubusercontent.com/89832278/134763385-ebeaf411-bef1-496c-96e9-539b8e555be8.gif)
 
 ## Getting Started
 
