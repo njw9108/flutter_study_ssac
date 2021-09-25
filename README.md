@@ -1,7 +1,6 @@
 # bmi_calc
 
-![결과](https://user-images.githubusercontent.com/89832278/134763872-d275590e-8371-4191-852d-c54c56dd7131.gif)
-
+![Uploading 결과1.gif…]()
 
 
 ## Getting Started
