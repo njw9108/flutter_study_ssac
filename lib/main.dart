@@ -44,7 +44,7 @@ class _BmiMainState extends State<BmiMain> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('비만도 검사기'),
+        title: Text('비만도 검사기222'),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
