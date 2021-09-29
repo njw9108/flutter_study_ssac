@@ -1,8 +1,7 @@
 # json_post_coment
+![flutter_json_post_result1](https://user-images.githubusercontent.com/89832278/135216908-8b33fceb-5f7b-40fe-b1e8-d725d9ab5dc0.gif)
 
-![flutter_json_post_result1](https://user-images.githubusercontent.com/89832278/135216789-184197d9-4590-498f-bc19-3cf3ed3711c4.gif)
-
-![Uploading flutter_json_post_result2.gif…]()
+![flutter_json_post_result2](https://user-images.githubusercontent.com/89832278/135216920-3d470b52-f442-4cb2-a4e7-5ccd919e5bc6.gif)
 
 
 ## Getting Started
