@@ -37,38 +37,36 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Post Data'),
       ),
-      body: ListView(
-        children: [
-          GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              ..._list.map((e) {
-                return InkWell (
-                  onTap: () async {
-                    List<Comment> comments = await fetchComments();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => PostDetail(e.userId,e.id,e.title,e.body,comments)),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DataCard(e.userId, e.id, e.title),
-                  ),
-                );
-              }).toList(),
-            ],
-          ),
-        ],
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: _list.map((e) {
+          return InkWell(
+            onTap: () async {
+              List<Comment> comments = await fetchComments();
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PostDetail(
+                          post: e,
+                          comments: comments,
+                        )),
+              );
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DataCard(
+                post: e,
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
 
   Future<List<Post>> fetchList() async {
     final response =
-    await http.get('https://jsonplaceholder.typicode.com/posts');
+        await http.get('https://jsonplaceholder.typicode.com/posts');
 
     Iterable jsonResponse = jsonDecode(response.body);
     List<Post> posts = jsonResponse.map((e) => Post.fromJson(e)).toList();
@@ -78,10 +76,11 @@ class _HomePageState extends State<HomePage> {
 
   Future<List<Comment>> fetchComments() async {
     final response =
-    await http.get('https://jsonplaceholder.typicode.com/comments');
+        await http.get('https://jsonplaceholder.typicode.com/comments');
 
     Iterable jsonResponse = jsonDecode(response.body);
-    List<Comment> comments = jsonResponse.map((e) => Comment.fromJson(e)).toList();
+    List<Comment> comments =
+        jsonResponse.map((e) => Comment.fromJson(e)).toList();
 
     return comments;
   }

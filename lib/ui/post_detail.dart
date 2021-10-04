@@ -2,24 +2,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:json_post_coment/model/commnet.dart';
+import 'package:json_post_coment/model/post.dart';
 
 class PostDetail extends StatelessWidget {
-  final int _userId;
-  final int _id;
-  final String _title;
-  final String _body;
-  final List<Comment> _comments;
-  List<Comment> _des;
+  final Post post;
+  final List<Comment> comments;
 
-  PostDetail(this._userId, this._id, this._title, this._body, this._comments);
+  PostDetail({
+    @required this.post,
+    @required this.comments,
+  });
 
   List<Comment> findComment(int id) {
-    return _comments.where((element) => element.postId == id).toList();
+    return comments.where((element) => element.postId == id).toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    _des = findComment(_id);
     return Scaffold(
       appBar: AppBar(
         title: Text('Detail'),
@@ -27,19 +26,19 @@ class PostDetail extends StatelessWidget {
       body: ListView(
         children: [
           WriteBold('Title'),
-          WriteNormal(text: _title),
-          WriteID(userId: _userId, id: _id),
+          WriteNormal(text: post.title),
+          WriteID(userId: post.userId, id: post.id),
           MakeLine(),
           WriteBold('body: '),
-          WriteNormal(text: _body),
+          WriteNormal(text: post.body),
           MakeLine(),
           WriteBold('comments:'),
-          ..._des.map(
+          ...findComment(post.id).map(
             (e) => Padding(
               padding: const EdgeInsets.all(8.0),
               child: CommentText(e),
             ),
-          ),
+          ).toList(),
         ],
       ),
     );

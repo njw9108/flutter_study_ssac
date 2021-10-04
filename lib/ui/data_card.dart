@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:json_post_coment/model/post.dart';
 
 class DataCard extends StatelessWidget {
-  final int userId;
-  final int id;
-  final String title;
+  final Post post;
 
-  DataCard(this.userId, this.id, this.title);
+  DataCard({@required this.post});
 
   @override
   Widget build(BuildContext context) {
+    int id = post.id;
+    int userId = post.userId;
     return Container(
       padding: EdgeInsets.all(8),
       color: Colors.lightBlueAccent,
@@ -18,7 +19,7 @@ class DataCard extends StatelessWidget {
           Column(
             children: [
               WriteBold('Title',22),
-              WriteNormal(title,21),
+              WriteNormal(post.title,21),
             ],
           ),
           Row(
