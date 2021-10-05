@@ -39,11 +39,7 @@ class HomePage extends StatelessWidget {
                 return ListView(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  children: conferences
-                      .map((e) => InkWell(
-                            child: ConferenceList(e),
-                          ))
-                      .toList(),
+                  children: conferences.map((e) => ConferenceList(e)).toList(),
                 );
               }),
         ],

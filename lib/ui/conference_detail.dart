@@ -11,23 +11,70 @@ class ConferenceDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          conferenceData.name,
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
+          onPressed: () => Navigator.of(context).pop(),
         ),
+        title: Text(
+          "Conference",
+          style: TextStyle(color: Colors.blue),
+        ),
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [
-          Text(conferenceData.location),
           Row(
             children: [
-              Text(conferenceData.start),
-              Text(' - '),
-              Text(conferenceData.end),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  conferenceData.name,
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
             ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  conferenceData.location,
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Text(
+                  conferenceData.start,
+                  style: TextStyle(fontSize: 24),
+                ),
+                Text(
+                  ' - ',
+                  style: TextStyle(fontSize: 24),
+                ),
+                Text(
+                  conferenceData.end,
+                  style: TextStyle(fontSize: 24),
+                ),
+              ],
+            ),
           )
         ],
       ),
     );
   }
+
+
 }
