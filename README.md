@@ -1,6 +1,7 @@
 # conference_information
 
-A new Flutter project.
+![conference_infomation](https://user-images.githubusercontent.com/89832278/136020792-fe0c0ecf-d72b-4e21-af78-f00d8d7e9fb8.gif)
+
 
 ## Getting Started
 
