@@ -9,19 +9,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'Conferences',
-          style: TextStyle(
-            fontSize: 35,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
       body: ListView(
         children: [
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 20.0, left: 8, right: 8, bottom: 8),
+            child: Text(
+              'Conferences',
+              style: TextStyle(
+                fontSize: 35,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Container(
+            height: 1,
+            color: Colors.black,
+          ),
           FutureBuilder<List<ConferenceData>>(
               future: api.fetchList(),
               initialData: [],

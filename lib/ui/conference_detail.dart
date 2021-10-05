@@ -1,14 +1,31 @@
 import 'package:conference_information/model/conference_data.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart' as url;
+import 'package:url_launcher/url_launcher.dart';
+import 'package:intl/intl.dart';
 
 class ConferenceDetail extends StatelessWidget {
   final ConferenceData conferenceData;
 
   ConferenceDetail(this.conferenceData);
 
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    var start = DateTime.parse(conferenceData.start);
+    var end = DateTime.parse(conferenceData.end);
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -57,24 +74,41 @@ class ConferenceDetail extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  conferenceData.start,
-                  style: TextStyle(fontSize: 24),
+                  DateFormat('MMM dd, yyyy').format(start),
+                  style: TextStyle(fontSize: 22),
                 ),
                 Text(
                   ' - ',
-                  style: TextStyle(fontSize: 24),
+                  style: TextStyle(fontSize: 22),
                 ),
                 Text(
-                  conferenceData.end,
-                  style: TextStyle(fontSize: 24),
+                  DateFormat('MMM dd, yyyy').format(end),
+                  style: TextStyle(fontSize: 22),
                 ),
               ],
             ),
-          )
+          ),
+          InkWell(
+            onTap: () {
+              return _launchInBrowser(conferenceData.link);
+            },
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Go to official website',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
-
-
 }

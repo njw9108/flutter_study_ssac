@@ -14,3 +14,4 @@ Future<List<ConferenceData>> fetchList() async {
 
   return conferences;
 }
+
