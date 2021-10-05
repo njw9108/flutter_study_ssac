@@ -1,0 +1,1 @@
+const String url = 'https://raw.githubusercontent.com/junsuk5/mock_json/main/conferences.json';
