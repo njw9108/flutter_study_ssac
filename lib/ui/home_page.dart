@@ -2,7 +2,6 @@ import 'package:conference_information/api.dart' as api;
 import 'package:conference_information/model/conference_data.dart';
 import 'package:conference_information/ui/conference_list.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart' as url;
 
 class HomePage extends StatelessWidget {
   const HomePage({Key key}) : super(key: key);
@@ -40,7 +39,11 @@ class HomePage extends StatelessWidget {
                 return ListView(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  children: conferences.map((e) => InkWell(child: ConferenceList(e),)).toList(),
+                  children: conferences
+                      .map((e) => InkWell(
+                            child: ConferenceList(e),
+                          ))
+                      .toList(),
                 );
               }),
         ],
