@@ -1,5 +1,5 @@
-class PixabayPicture {
-  PixabayPicture({
+class PixabayHits {
+  PixabayHits({
     int id,
     String pageURL,
     String type,
@@ -47,8 +47,8 @@ class PixabayPicture {
     _userImageURL = userImageURL;
   }
 
-  factory PixabayPicture.fromJson(Map<String,dynamic> json) {
-    return PixabayPicture(
+  factory PixabayHits.fromJson(Map<String, dynamic> json) {
+    return PixabayHits(
       id: json['id'],
       pageURL: json['pageURL'],
       type: json['type'],

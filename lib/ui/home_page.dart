@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_search/api.dart' as api;
-import 'package:image_search/model/pixabay_total.dart';
+import 'package:image_search/model/pixabay_data.dart';
 import 'package:image_search/ui/image_item.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title: Text(
           'API test',
-          style: TextStyle(fontSize: 24),
+          style: TextStyle(fontSize: 28),
         ),
       ),
       body: ListView(
@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    style: TextStyle(fontSize: 30),
                     controller: inputController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
@@ -53,13 +54,13 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Text(
                     '검색',
-                    style: TextStyle(fontSize: 22, color: Colors.blue),
+                    style: TextStyle(fontSize: 28, color: Colors.blue),
                   ),
                 ),
               ),
             ],
           ),
-          FutureBuilder<PixabayTotal>(
+          FutureBuilder<PixabayData>(
             future: api.fetch(url),
             //initialData: ,
             builder: (context, snapshot) {
@@ -72,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               if (!snapshot.hasData) {
                 return Text('데이터가 없습니다');
               }
-              PixabayTotal total = snapshot.data;
+              PixabayData total = snapshot.data;
               return ListView(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
