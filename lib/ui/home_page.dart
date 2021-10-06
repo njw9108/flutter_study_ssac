@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:image_search/api.dart' as api;
+import 'package:image_search/model/pixabay_picture.dart';
+import 'package:image_search/model/pixabay_total.dart';
+import 'package:image_search/ui/image_item.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
+  final TextEditingController inputController = TextEditingController();
+  String url = api.MakeApiUrl('iphone');
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +26,7 @@ class HomePage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    controller: inputController,
                     decoration: InputDecoration(
                       enabledBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.blue),
@@ -34,12 +40,38 @@ class HomePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  '검색',
-                  style: TextStyle(fontSize: 22, color: Colors.blue),
+                child: InkWell(
+                  onTap: () {
+                    url = api.MakeApiUrl(inputController.text);
+                  },
+                  child: Text(
+                    '검색',
+                    style: TextStyle(fontSize: 22, color: Colors.blue),
+                  ),
                 ),
               ),
             ],
+          ),
+          FutureBuilder<PixabayTotal>(
+            future: api.fetch(url),
+            //initialData: ,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              }
+              if (snapshot.hasError) {
+                return Text('에러가 발생했습니다');
+              }
+              if (!snapshot.hasData) {
+                return Text('데이터가 없습니다');
+              }
+              PixabayTotal total = snapshot.data;
+              return ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: total.hits.map((e) => ImageItem(e)).toList(),
+              );
+            },
           ),
         ],
       ),
