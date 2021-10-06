@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:image_search/api.dart' as api;
-import 'package:image_search/model/pixabay_picture.dart';
 import 'package:image_search/model/pixabay_total.dart';
 import 'package:image_search/ui/image_item.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final TextEditingController inputController = TextEditingController();
+
   String url = api.MakeApiUrl('iphone');
 
   @override
@@ -42,7 +47,9 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
-                    url = api.MakeApiUrl(inputController.text);
+                    setState(() {
+                      url = api.MakeApiUrl(inputController.text);
+                    });
                   },
                   child: Text(
                     '검색',
