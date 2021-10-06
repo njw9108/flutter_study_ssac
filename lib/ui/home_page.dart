@@ -73,11 +73,20 @@ class _HomePageState extends State<HomePage> {
               if (!snapshot.hasData) {
                 return Text('데이터가 없습니다');
               }
-              PixabayData total = snapshot.data;
+              if (snapshot.data.total == 0) {
+                return Center(
+                    child: Text(
+                  inputController.text + '의 검색 정보가 없습니다.',
+                  style: TextStyle(
+                    fontSize: 24,
+                  ),
+                ));
+              }
+              PixabayData data = snapshot.data;
               return ListView(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                children: total.hits.map((e) => ImageItem(e)).toList(),
+                children: data.hits.map((e) => ImageItem(e)).toList(),
               );
             },
           ),

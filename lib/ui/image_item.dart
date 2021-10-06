@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:image_search/model/pixabay_hits.dart';
 
 class ImageItem extends StatelessWidget {
-  final PixabayHits picture;
+  final PixabayHits hits;
+  //final PixabayData hits;
 
-  ImageItem(this.picture);
+  ImageItem(this.hits);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ImageItem extends StatelessWidget {
           child: SizedBox(
             height: 160,
             child: Image.network(
-              picture.previewURL,
+              hits.previewURL,
               fit: BoxFit.fill,
             ),
           ),
@@ -23,7 +24,7 @@ class ImageItem extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Text(
-            picture.tags,
+            hits.tags,
             style: TextStyle(
               fontSize: 28,
             ),
