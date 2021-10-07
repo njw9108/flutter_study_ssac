@@ -3,7 +3,6 @@ import 'package:image_search/model/pixabay_hits.dart';
 
 class ImageItem extends StatelessWidget {
   final PixabayHits hits;
-  //final PixabayData hits;
 
   ImageItem(this.hits);
 
@@ -16,7 +15,7 @@ class ImageItem extends StatelessWidget {
           child: SizedBox(
             height: 160,
             child: Image.network(
-              hits.previewURL,
+              hits.webformatURL,
               fit: BoxFit.fill,
             ),
           ),
