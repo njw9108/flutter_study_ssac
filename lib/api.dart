@@ -10,13 +10,13 @@ Future<PixabayData> fetch(String url) async {
 
   Map<String, dynamic> jsonResponse = jsonDecode(response.body);
 
-  PixabayData total = PixabayData.fromJson(jsonResponse);
+  PixabayData data = PixabayData.fromJson(jsonResponse);
 
-  return total;
+  return data;
 }
 
 String MakeApiUrl(String search) {
   String url;
-  url = constant.searchURL + search;
+  url = constant.searchURL + search + constant.endLine;
   return url;
 }
