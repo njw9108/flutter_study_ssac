@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "928669992944",
+    "project_id": "instargram-clone2",
+    "storage_bucket": "instargram-clone2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928669992944:android:2a0d4ff818c0b274c83f35",
+        "android_client_info": {
+          "package_name": "com.example.instargram_clone2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928669992944-q0s2rum52de5feml9cpn8j4gr0rohuo4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instargram_clone2",
+            "certificate_hash": "febd925f0d05b7f98753c0822318c5cd13c8e469"
+          }
+        },
+        {
+          "client_id": "928669992944-2serb1524thrn498dbot222hlogn407g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYgPZC51uQVqrNF9Kx0CiVRZOBNg4aGU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928669992944-2serb1524thrn498dbot222hlogn407g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
