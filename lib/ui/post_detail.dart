@@ -9,8 +9,8 @@ class PostDetail extends StatelessWidget {
   final List<Comment> comments;
 
   PostDetail({
-    @required this.post,
-    @required this.comments,
+    required this.post,
+    required this.comments,
   });
 
   List<Comment> findComment(int id) {
@@ -123,7 +123,7 @@ class WriteCommentBold extends StatelessWidget {
 
 class MakeLine extends StatelessWidget {
   const MakeLine({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -137,9 +137,9 @@ class MakeLine extends StatelessWidget {
 
 class WriteID extends StatelessWidget {
   const WriteID({
-    Key key,
-    @required int userId,
-    @required int id,
+    Key? key,
+    required int userId,
+    required int id,
   })  : _userId = userId,
         _id = id,
         super(key: key);
@@ -177,8 +177,8 @@ class WriteID extends StatelessWidget {
 
 class WriteNormal extends StatelessWidget {
   const WriteNormal({
-    Key key,
-    @required String text,
+    Key? key,
+    required String text,
   })  : _text = text,
         super(key: key);
 

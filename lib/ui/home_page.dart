@@ -9,7 +9,7 @@ import 'package:json_post_coment/ui/data_card.dart';
 import 'package:json_post_coment/ui/post_detail.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<List<Post>> fetchList() async {
     final response =
-        await http.get('https://jsonplaceholder.typicode.com/posts');
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     Iterable jsonResponse = jsonDecode(response.body);
     List<Post> posts = jsonResponse.map((e) => Post.fromJson(e)).toList();
@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
 
   Future<List<Comment>> fetchComments() async {
     final response =
-        await http.get('https://jsonplaceholder.typicode.com/comments');
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/comments'));
 
     Iterable jsonResponse = jsonDecode(response.body);
     List<Comment> comments =

@@ -4,7 +4,7 @@ import 'package:json_post_coment/model/post.dart';
 class DataCard extends StatelessWidget {
   final Post post;
 
-  DataCard({@required this.post});
+  DataCard({required this.post});
 
   @override
   Widget build(BuildContext context) {

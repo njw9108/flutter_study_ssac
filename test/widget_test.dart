@@ -7,18 +7,15 @@
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:json_post_coment/main.dart';
-import 'package:json_post_coment/model/post.dart';
 import 'package:http/http.dart' as http;
+import 'package:json_post_coment/model/post.dart';
 
 
 void main() {
   Future<List<Post>> fetchList() async {
     final response =
-    await http.get('https://jsonplaceholder.typicode.com/posts');
+    await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
     Iterable jsonResponse = jsonDecode(response.body);
     List<Post> posts = jsonResponse.map((e) => Post.fromJson(e)).toList();
