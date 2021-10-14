@@ -1,5 +1,7 @@
 class Calc_BMI
 {
+  Calc_BMI();
+
   String calcBmi(double bmi) {
     var result = '저체중';
     if (bmi >= 35) {

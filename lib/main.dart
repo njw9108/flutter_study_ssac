@@ -115,7 +115,7 @@ class _BmiMainState extends State<BmiMain> {
 class BmiResult extends StatelessWidget {
   late final double height;
   late final double weight;
-  late Calc_BMI calc;
+  Calc_BMI calc = Calc_BMI();
 
   BmiResult({required this.height, required this.weight});
 
