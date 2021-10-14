@@ -1,36 +1,21 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'error_message.g.dart';
+
+@JsonSerializable()
 class ErrorMessage {
-  ErrorMessage({
-      required this.status,
-      required this.code,
-      required this.message,
-      required this.link,
-      required this.developerMessage,
-      required this.total,});
+  int status;
+  String code;
+  String message;
+  String link;
+  String developerMessage;
+  int total;
 
-  ErrorMessage.fromJson(dynamic json) {
-    status = json['status'];
-    code = json['code'];
-    message = json['message'];
-    link = json['link'];
-    developerMessage = json['developerMessage'];
-    total = json['total'];
-  }
-  late int status;
-  late String code;
-  late String message;
-  late String link;
-  late String developerMessage;
-  late int total;
+  ErrorMessage(this.status, this.code, this.message, this.link,
+      this.developerMessage, this.total);
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['status'] = status;
-    map['code'] = code;
-    map['message'] = message;
-    map['link'] = link;
-    map['developerMessage'] = developerMessage;
-    map['total'] = total;
-    return map;
-  }
+  factory ErrorMessage.fromJson(Map<String, dynamic> json) =>
+      _$ErrorMessageFromJson(json);
 
+  Map<String, dynamic> toJson() => _$ErrorMessageToJson(this);
 }

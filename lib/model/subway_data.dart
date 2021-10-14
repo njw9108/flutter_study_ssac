@@ -2,32 +2,19 @@ import 'package:subway_info_app/model/realtime_arrival_list.dart';
 
 import 'error_message.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+
+part 'subway_data.g.dart';
+
+@JsonSerializable()
 class SubwayData {
-  SubwayData({
-      this.errorMessage, 
-      this.realtimeArrivalList,});
-
-  SubwayData.fromJson(dynamic json) {
-    errorMessage = json['errorMessage'] != null ? ErrorMessage.fromJson(json['errorMessage']) : null;
-    if (json['realtimeArrivalList'] != null) {
-      realtimeArrivalList = [];
-      json['realtimeArrivalList'].forEach((v) {
-        realtimeArrivalList?.add(RealtimeArrivalList.fromJson(v));
-      });
-    }
-  }
   ErrorMessage? errorMessage;
-    List<RealtimeArrivalList>? realtimeArrivalList;
+  List<RealtimeArrivalList>? realtimeArrivalList;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    if (errorMessage != null) {
-      map['errorMessage'] = errorMessage?.toJson();
-    }
-    if (realtimeArrivalList != null) {
-      map['realtimeArrivalList'] = realtimeArrivalList?.map((v) => v.toJson()).toList();
-    }
-    return map;
-  }
+  SubwayData(this.errorMessage, this.realtimeArrivalList);
 
+  factory SubwayData.fromJson(Map<String, dynamic> json) =>
+      _$SubwayDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubwayDataToJson(this);
 }
