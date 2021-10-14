@@ -77,8 +77,10 @@ class _BmiMainState extends State<BmiMain> {
                 controller: _weightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value!.trim().isEmpty) {
-                    return '몸무게를 입력하세요';
+                  if (value != null){
+                    if (value.trim().isEmpty) {
+                      return '몸무게를 입력하세요';
+                    }
                   }
                   return null;
                 },
@@ -115,7 +117,7 @@ class _BmiMainState extends State<BmiMain> {
 class BmiResult extends StatelessWidget {
   late final double height;
   late final double weight;
-  Calc_BMI calc = Calc_BMI();
+  Calc_BMI? calc;
 
   BmiResult({required this.height, required this.weight});
 
@@ -133,7 +135,7 @@ class BmiResult extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              calc.calcBmi(bmi),
+              calc?.calcBmi(bmi) ?? '',
               style: TextStyle(fontSize: 36),
             ),
             SizedBox(
