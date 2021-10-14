@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
 }
 
 class BmiMain extends StatefulWidget {
-  const BmiMain({Key key}) : super(key: key);
+  const BmiMain({Key? key}) : super(key: key);
 
   @override
   _BmiMainState createState() => _BmiMainState();
@@ -60,7 +60,7 @@ class _BmiMainState extends State<BmiMain> {
                 controller: _heightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value.trim().isEmpty) {
+                  if (value!.trim().isEmpty) {
                     return '키를 입력하세요.';
                   }
                   return null;
@@ -77,7 +77,7 @@ class _BmiMainState extends State<BmiMain> {
                 controller: _weightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value.trim().isEmpty) {
+                  if (value!.trim().isEmpty) {
                     return '몸무게를 입력하세요';
                   }
                   return null;
@@ -88,14 +88,16 @@ class _BmiMainState extends State<BmiMain> {
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState.validate()) {
+                    if (_formKey.currentState!.validate()) {
                       //검증시 처리
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => BmiResult(
-                                double.parse(_heightController.text.trim()),
-                                double.parse(_weightController.text.trim()))),
+                                height:
+                                    double.parse(_heightController.text.trim()),
+                                weight: double.parse(
+                                    _weightController.text.trim()))),
                       );
                     }
                   },
@@ -111,10 +113,11 @@ class _BmiMainState extends State<BmiMain> {
 }
 
 class BmiResult extends StatelessWidget {
-  final double height;
-  final double weight;
-  Calc_BMI calc;
-  BmiResult(this.height, this.weight);
+  late final double height;
+  late final double weight;
+  late Calc_BMI calc;
+
+  BmiResult({required this.height, required this.weight});
 
   @override
   Widget build(BuildContext context) {
@@ -150,20 +153,18 @@ class BmiResult extends StatelessWidget {
         color: Colors.red,
         size: 100,
       );
-    }else if(bmi >= 18.5){
+    } else if (bmi >= 18.5) {
       return Icon(
         Icons.sentiment_satisfied,
         color: Colors.green,
         size: 100,
       );
-    }
-    else {
+    } else {
       return Icon(
         Icons.sentiment_dissatisfied,
         color: Colors.orange,
         size: 100,
       );
     }
-
   }
 }
