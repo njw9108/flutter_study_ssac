@@ -1,20 +1,17 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:subway_info_app/model/error_message.dart';
 import 'package:subway_info_app/model/realtime_arrival_list.dart';
 
-import 'error_message.dart';
-
-import 'package:json_annotation/json_annotation.dart';
-
+part 'subway_data.freezed.dart';
 part 'subway_data.g.dart';
 
-@JsonSerializable()
-class SubwayData {
-  ErrorMessage? errorMessage;
-  List<RealtimeArrivalList>? realtimeArrivalList;
-
-  SubwayData(this.errorMessage, this.realtimeArrivalList);
+@freezed
+class SubwayData with _$SubwayData {
+  factory SubwayData({
+    required ErrorMessage? errorMessage,
+    required List<RealtimeArrivalList>? realtimeArrivalList,
+  }) = _SubwayData;
 
   factory SubwayData.fromJson(Map<String, dynamic> json) =>
       _$SubwayDataFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SubwayDataToJson(this);
 }
