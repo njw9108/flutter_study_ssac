@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               if (!snapshot.hasData) {
                 return Text('데이터가 없습니다');
               }
-              if (snapshot.data.total == 0) {
+              if (snapshot.data!.total == 0) {
                 return Center(
                     child: Text(
                   inputController.text + '의 검색 정보가 없습니다.',
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ));
               }
-              PixabayData data = snapshot.data;
+              PixabayData data = snapshot.data!;
               return ListView(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

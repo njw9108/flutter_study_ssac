@@ -1,11 +1,15 @@
 import 'package:image_search/model/pixabay_hits.dart';
 
 class PixabayData {
-  int total;
-  int totalHits;
-  List<PixabayHits> hits;
+  late int total;
+  late int totalHits;
+  late List<PixabayHits> hits;
 
-  PixabayData({this.total, this.totalHits, this.hits});
+  PixabayData({
+    required this.total,
+    required this.totalHits,
+    required this.hits,
+  });
 
   factory PixabayData.fromJson(Map<String, dynamic> json) {
     var list = json['hits'] as List;

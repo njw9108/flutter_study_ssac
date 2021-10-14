@@ -1,27 +1,27 @@
 class PixabayHits {
   PixabayHits({
-    int id,
-    String pageURL,
-    String type,
-    String tags,
-    String previewURL,
-    int previewWidth,
-    int previewHeight,
-    String webformatURL,
-    int webformatWidth,
-    int webformatHeight,
-    String largeImageURL,
-    int imageWidth,
-    int imageHeight,
-    int imageSize,
-    int views,
-    int downloads,
-    int collections,
-    int likes,
-    int comments,
-    int userId,
-    String user,
-    String userImageURL,
+    required int id,
+    required String pageURL,
+    required String type,
+    required String tags,
+    required String previewURL,
+    required int previewWidth,
+    required int previewHeight,
+    required String webformatURL,
+    required int webformatWidth,
+    required int webformatHeight,
+    required String largeImageURL,
+    required int imageWidth,
+    required int imageHeight,
+    required int imageSize,
+    required int views,
+    required int downloads,
+    required int collections,
+    required int likes,
+    required int comments,
+    required int userId,
+    required String user,
+    required String userImageURL,
   }) {
     _id = id;
     _pageURL = pageURL;
@@ -74,28 +74,28 @@ class PixabayHits {
     );
   }
 
-  int _id;
-  String _pageURL;
-  String _type;
-  String _tags;
-  String _previewURL;
-  int _previewWidth;
-  int _previewHeight;
-  String _webformatURL;
-  int _webformatWidth;
-  int _webformatHeight;
-  String _largeImageURL;
-  int _imageWidth;
-  int _imageHeight;
-  int _imageSize;
-  int _views;
-  int _downloads;
-  int _collections;
-  int _likes;
-  int _comments;
-  int _userId;
-  String _user;
-  String _userImageURL;
+  late int _id;
+  late String _pageURL;
+  late String _type;
+  late String _tags;
+  late String _previewURL;
+  late int _previewWidth;
+  late int _previewHeight;
+  late String _webformatURL;
+  late int _webformatWidth;
+  late int _webformatHeight;
+  late String _largeImageURL;
+  late int _imageWidth;
+  late int _imageHeight;
+  late int _imageSize;
+  late int _views;
+  late int _downloads;
+  late int _collections;
+  late int _likes;
+  late int _comments;
+  late int _userId;
+  late String _user;
+  late String _userImageURL;
 
   int get id => _id;
 
