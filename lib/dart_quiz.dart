@@ -94,11 +94,14 @@ void main() {
   //print(transactions.reduce((a, b) => a.value > b.value ? a: b).value);
   /////
 
-  List<int> valueItems = [];
-  transactions.forEach((e) => valueItems.add(e.value));
-  print(valueItems.reduce((v, e) => max(v, e)));
-  print('');
+  // List<int> valueItems = [];
+  // transactions.forEach((e) => valueItems.add(e.value));
+  // print(valueItems.reduce((v, e) => max(v, e)));
+  print('=====7번=====');
+  print(transactions.map((e) => e.value).reduce((value, element) => max(value,element)));
+  print('============');
 // 8. 전체 트랜잭션 중 최소값은 얼마인가?
-  print(valueItems.reduce((v, e) => min(v, e)));
-  print('');
+  print('=====8번=====');
+  print(transactions.map((e) => e.value).reduce((value, element) => min(value,element)));
+  print('============');
 }
