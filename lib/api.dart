@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:subway_info_app/model/subway_data.dart';
 
-import 'constant.dart' as constant;
-
 Future<SubwayData> fetch(String url) async {
   final response = await http.get(Uri.parse(url));
 
@@ -17,6 +15,8 @@ Future<SubwayData> fetch(String url) async {
 
 String MakeApiUrl(String search) {
   String url;
-  url = constant.url + search;
+  url =
+      'http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/' +
+          search;
   return url;
 }

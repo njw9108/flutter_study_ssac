@@ -1,1 +1,0 @@
-const String url = 'http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/';

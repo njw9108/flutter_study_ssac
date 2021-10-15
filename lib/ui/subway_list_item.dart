@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:subway_info_app/model/realtime_arrival_list.dart';
-import 'package:subway_info_app/model/subway_data.dart';
 
 class SubwayListItem extends StatelessWidget {
   final RealtimeArrivalList arrivalData;
