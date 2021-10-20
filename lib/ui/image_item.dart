@@ -4,7 +4,7 @@ import 'package:image_search/model/pixabay_hits.dart';
 class ImageItem extends StatelessWidget {
   final PixabayHits hits;
 
-  ImageItem(this.hits);
+  const ImageItem({Key? key, required this.hits}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ImageItem extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Text(
             hits.tags,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 28,
             ),
           ),
