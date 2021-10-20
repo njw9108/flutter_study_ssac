@@ -14,9 +14,10 @@ class ImageItem extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: SizedBox(
             height: 160,
+            width: 250,
             child: Image.network(
               hits.webformatURL,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
         ),

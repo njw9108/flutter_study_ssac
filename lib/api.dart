@@ -3,9 +3,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:image_search/model/pixabay_data.dart';
 
-import 'constant.dart' as constant;
+Future<PixabayData> fetch(String search) async {
+  String url;
+  url = MakeApiUrl(search);
 
-Future<PixabayData> fetch(String url) async {
   final response = await http.get(Uri.parse(url));
 
   Map<String, dynamic> jsonResponse = jsonDecode(response.body);
@@ -17,6 +18,8 @@ Future<PixabayData> fetch(String url) async {
 
 String MakeApiUrl(String search) {
   String url;
-  url = constant.searchURL + search + constant.endLine;
+  url = 'https://pixabay.com/api/?key=23724506-c08a900ec14a0baa52676e2fd&q=' +
+      search +
+      '&image_type=photo';
   return url;
 }

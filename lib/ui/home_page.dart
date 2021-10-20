@@ -9,9 +9,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String search = 'iphone';
   final TextEditingController inputController = TextEditingController();
 
-  String url = api.MakeApiUrl('iphone');
+  @override
+  void dispose() {
+    inputController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 child: InkWell(
                   onTap: () {
                     setState(() {
-                      url = api.MakeApiUrl(inputController.text);
+                      search = inputController.text;
                     });
                   },
                   child: Text(
@@ -61,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           FutureBuilder<PixabayData>(
-            future: api.fetch(url),
+            future: api.fetch(search),
             //initialData: ,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
