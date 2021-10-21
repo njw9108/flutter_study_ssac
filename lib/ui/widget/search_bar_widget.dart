@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:image_search/stream/api_inherited_widget.dart';
 
-class SearchBarWidget extends StatefulWidget {
-  const SearchBarWidget({Key? key}) : super(key: key);
+class SearchBarWidget extends StatelessWidget {
+  final TextEditingController controller;
 
-  @override
-  State<SearchBarWidget> createState() => _SearchBarWidgetState();
-}
-
-class _SearchBarWidgetState extends State<SearchBarWidget> {
-  final TextEditingController inputController = TextEditingController();
-
-  @override
-  void dispose() {
-    inputController.dispose();
-    super.dispose();
-  }
+  const SearchBarWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +25,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                   }
                 },
                 style: const TextStyle(fontSize: 30),
-                controller: inputController,
+                controller: controller,
                 decoration: const InputDecoration(
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue),
@@ -53,9 +42,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
             child: TextButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  FocusScope.of(context).unfocus();
-
-                  viewModel.searchItem(inputController.text);
+                  viewModel.searchItem(controller.text);
                 }
               },
               child: const Text(
