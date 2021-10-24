@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:image_search/stream/api_inherited_widget.dart';
-import 'package:image_search/stream/api_view_model.dart';
-import 'package:image_search/ui/home_page.dart';
+import 'package:image_search/data/pixabay_api.dart';
+import 'package:image_search/ui/home/home_page.dart';
+import 'package:image_search/ui/home/home_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ViewInheritedWidget(
-        viewModel: ApiViewModel(),
+      home: ChangeNotifierProvider(
+        create: (_) => HomeViewModel(PixabayApi()),
         child: const HomePage(),
       ),
     );

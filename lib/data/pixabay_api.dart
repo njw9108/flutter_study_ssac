@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:image_search/data/pixabay_repository.dart';
 import 'package:image_search/model/pixabay_data.dart';
 
-class PixabayApi {
+class PixabayApi implements PixabayRepository<PixabayData> {
+  @override
   Future<PixabayData> fetch(String search) async {
     String url;
     url = makeApiUrl(search);
