@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/instargram_clone2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/instargram_clone2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/instargram_clone2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_git_practice/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_git_practice/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_git_practice/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/subway_info_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/subway_info_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/subway_info_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_project/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_project/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_project/build" />
+      <excludeFolder url="file://$MODULE_DIR$/naver_ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/naver_ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/naver_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_exam/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_exam/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_exam/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search/build" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/image_search/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/image_search/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/image_search/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/video_sample/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/video_sample/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/video_sample/build" />
+      <excludeFolder url="file://$MODULE_DIR$/conference_information/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/conference_information/build" />
+      <excludeFolder url="file://$MODULE_DIR$/conference_information/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/json_post_commnet/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/json_post_commnet/build" />
+      <excludeFolder url="file://$MODULE_DIR$/json_post_commnet/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/flutter_project/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/flutter_project/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/flutter_project/build" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search_viewmodel/build" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search_viewmodel/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/image_search_viewmodel/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/dart_exam/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/dart_exam/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/dart_exam/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/conference_information/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/conference_information/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_cart_bloc/conference_information/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
