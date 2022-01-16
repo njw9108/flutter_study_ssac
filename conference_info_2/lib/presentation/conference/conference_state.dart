@@ -9,6 +9,7 @@ part 'conference_state.g.dart';
 class ConferenceState with _$ConferenceState {
   factory ConferenceState({
     @Default([]) List<ConferenceInfo> conferenceInfo,
+    @Default(true) bool isLoading,
   }) = _ConferenceState;
 
   factory ConferenceState.fromJson(Map<String, dynamic> json) =>

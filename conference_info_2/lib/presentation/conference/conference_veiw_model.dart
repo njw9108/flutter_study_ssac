@@ -16,6 +16,11 @@ class ConferenceViewModel with ChangeNotifier {
   ConferenceState get state => _state;
 
   Future<void> fetchInfo() async {
+    _state = state.copyWith(
+      isLoading: true,
+    );
+    notifyListeners();
+
     final result = await getConferenceInfo();
     result.when(success: (info) {
       _state = state.copyWith(
@@ -24,6 +29,10 @@ class ConferenceViewModel with ChangeNotifier {
     }, error: (message) {
       print(message);
     });
+
+    _state = state.copyWith(
+      isLoading: false,
+    );
     notifyListeners();
   }
 }
