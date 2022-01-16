@@ -10,7 +10,7 @@ class PixabayData with _$PixabayData {
   factory PixabayData({
     required int total,
     required int totalHits,
-    required Hits hits,
+    required List<Hits> hits,
   }) = _PixabayData;
 
   factory PixabayData.fromJson(Map<String, dynamic> json) =>

@@ -1,3 +1,0 @@
-abstract class GetPixabayData {
-  Future<>>
-}
