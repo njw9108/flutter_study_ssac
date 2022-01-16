@@ -6,7 +6,9 @@ class ConferenceViewModel with ChangeNotifier {
   final GetConferenceInfoUseCase getConferenceInfo;
   List<ConferenceInfo> conferenceInfo = [];
 
-  ConferenceViewModel(this.getConferenceInfo) {
+  ConferenceViewModel({
+    required this.getConferenceInfo,
+  }) {
     fetchInfo();
   }
 
