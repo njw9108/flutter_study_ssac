@@ -9,7 +9,7 @@ class PixabayRepositoryImpl implements PixabayDataRepository {
   PixabayRepositoryImpl(this._dataSource);
 
   @override
-  Future<Result<PixabayData>> getPixabayData() async {
-    return await _dataSource.getPixabayData();
+  Future<Result<PixabayData>> searchPixabayData(String query) async {
+    return await _dataSource.searchPixabayData(query);
   }
 }

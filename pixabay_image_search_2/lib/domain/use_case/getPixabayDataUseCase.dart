@@ -7,7 +7,7 @@ class GetPixabayDataUseCase {
 
   GetPixabayDataUseCase(this.repository);
 
-  Future<Result<PixabayData>> call() async {
-    return await repository.getPixabayData();
+  Future<Result<PixabayData>> call(String query) async {
+    return await repository.searchPixabayData(query);
   }
 }
