@@ -4,7 +4,7 @@ import 'package:conference_info_2/core/result.dart';
 import 'package:conference_info_2/domain/model/conference_info.dart';
 import 'package:http/http.dart' as http;
 
-class ConferenceDataSource {
+class HttpConferenceDataSource {
   String baseUrl =
       "https://raw.githubusercontent.com/junsuk5/mock_json/main/conferences.json";
 
