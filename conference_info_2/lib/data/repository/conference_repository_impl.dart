@@ -10,6 +10,6 @@ class ConferenceRepositoryImpl extends ConferenceInfoRepository {
 
   @override
   Future<Result<List<ConferenceInfo>>> getConferenceInfo() async {
-    return _dataSource.getConferenceInfo();
+    return await _dataSource.getConferenceInfo();
   }
 }
